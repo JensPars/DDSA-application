@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhD Project Proposal</title>
+    <style>
+        /* Base styles and variables */
+        :root {
+            --primary-color:  #840000;
+            --secondary-color:  #990000;
+            --text-color: #333;
+            --light-text: #915c54;
+            --light-bg: #f8e8e5;
+            --accent-color: #e7bbb3;
+            --border-color: #f0d1cc;
+            --success-color: #34a853;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .proposal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin: 20px 0 10px 0;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin: 15px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* List styling */
+        ul {
+            list-style-type: none;
+            margin-left: 10px;
+            margin-bottom: 15px;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .proposal-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-container">
+        <header>
+            <h1>Motivation Letter</h1>
+            <p>Jens Parslov</p>
+        </header>
+
+        <section>
+            <h2>Motivation for Pursuing a PhD</h2>
+            
+            <p>
+                My passion for research in computer vision has evolved from an academic curiosity into a well-defined research direction through my MSc studies at DTU, and the natural next step is to pursue a PhD. I have spent most of my MSc doing research-oriented project work, resulting in a published paper and two oral presentations at D3A. Through this process, I've discovered a genuine passion for diving into academic papers, extracting novel ideas, and iteratively testing and validating these concepts until I arrive at an optimal solution. Identifying research gaps and developing methodologies that address them has been uniquely fulfilling in ways that other professional experiences haven't matched.
+I've particularly enjoyed communicating my research through various channels—papers, posters, videos, and oral presentations at conferences like WACV 2024 and D3A. The scholarly dialogue that follows these presentations has been enriching. The peer review process, while challenging, has helped me grow as a researcher by forcing me to articulate my ideas with precision and respond thoughtfully to expert critique.
+What draws me to continue this path through doctoral studies is the research community's collaborative nature. I've found computer vision researchers remarkably open, sharing insights and working collectively to advance the field. This spirit of collaborative innovation aligns perfectly with my approach to research, where I value exchanging ideas and perspectives. My experience publishing CrashCar101 and presenting at conferences has given me a glimpse into this community. I'm eager to become a more active contributor through the substantial research a PhD enables.
+            </p>
+            
+            
+
+        </section>
+
+        <section>
+            <h2>Motivation for Addressing the Research Questions</h2>
+            
+            <p>The fundamental research question—how to efficiently adapt general vision models to personal preferences with minimal data—resonates deeply with me. It represents a technical problem and a philosophical shift in designing AI systems, from one-size-fits-all solutions to systems that respect individual differences and preferences.
+                This research aligns particularly well with my interest in fashion, which is inherently subjective. In fashion, personal style varies dramatically across individuals, and what appeals to one person may not appeal to another. This subjectivity makes fashion ideal for personalised AI systems that can learn and adapt to individual aesthetic preferences.
+                My work at Novo Nordisk has involved similar challenges, where I've applied approaches to adapt foundational vision models with limited data, making me well-prepared to tackle these research questions.</p>
+        </section>
+        <section>
+            <h2>Why I Am the Right Candidate</h2>
+            
+            <p>My academic and professional trajectory has uniquely prepared me for this research area. My strong foundation in computer vision and machine learning, evidenced by my exceptional academic performance at both bachelor's and master's levels, provides the theoretical grounding necessary for innovative research. The technical skills I've developed—from deep learning frameworks to synthetic data generation—directly apply to the challenges of model personalisation.
+                My publication record demonstrates my ability to identify meaningful problems and develop novel solutions. The CrashCar101 project addressed a critical data shortage through innovative synthetic data approaches. My upcoming work on diffusion augmentation for object detection further showcases my ability to extend the boundaries of what's possible with limited data.
+                My industrial experience at Novo Nordisk bridges the academic-industry divide, giving me insight into real-world applications and constraints. This perspective is invaluable for ensuring that research on personalisation remains practically relevant. My teaching experience has also taught me to communicate complex ideas clearly—a crucial skill for effective research collaboration and dissemination.
+                </p>
+        </section>
+        <section>
+            <h2>Broader Impact on Science and Society</h2>
+            
+            <p>Societally, personalised vision models could democratise access to AI technologies. Current systems often perform best for majority groups represented in training data, inadvertently creating disparities in performance. Personalisation techniques could ensure equitable performance across diverse user groups, regardless of their representation in original training data.</p>
+            
+
+        </section>
+        Thank you for considering my application. I look forward to discussing how my research goals align with your program.
+        <p></p>
+        <p>Sincerely,</p>
+        Jens Parslov
+    </div>
+</body>
+</html>

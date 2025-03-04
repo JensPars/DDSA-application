@@ -1,0 +1,42 @@
+<!-- image -->
+
+## List of grades for Jens Parslov (194649)
+
+## Education: BSc in Engineering (Bachelor program in Strategic Analysis and Systems Design)
+
+|                                  |                                                                        | Results extracted 16/7-2024 21:44   | Results extracted 16/7-2024 21:44   | Results extracted 16/7-2024 21:44   |
+|----------------------------------|------------------------------------------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
+| Number                           | Title                                                                  | Grade                               | ECTS                                | Date                                |
+| 01035                            | Advanced Engineering Mathematics 2                                     | 10 (B)                              | 5.0                                 | s23                                 |
+| B01                              | Part and damage segmentation of cars using deep learning and synthe... | 10 (B)                              | 15.0                                | v22                                 |
+| 02405                            | Probability Theory                                                     | 7 (C)                               | 5.0                                 | s22                                 |
+| 10054                            | Model Physics                                                          | 12 (A)                              | 5.0                                 | s22                                 |
+| 42610                            | Theory of science in engineering                                       | BE (P)                              | 5.0                                 | s22                                 |
+| S01                              | Counting and tracking people at Roskilde Festival (RF50)               | BE (P)                              | 5.0                                 | s22                                 |
+| 02456                            | Deep learning                                                          | 12 (A)                              | 5.0                                 | v21                                 |
+| 02476                            | Machine learning operations                                            | BE (P)                              | 5.0                                 | v21                                 |
+| 02807                            | Computational tools for data science                                   | 12 (A)                              | 5.0                                 | v21                                 |
+| 42421                            | Management and Organisation                                            | 12 (A)                              | 5.0                                 | v21                                 |
+| 02105                            | Algorithms and Data Structures 1                                       | 12 (A)                              | 5.0                                 | s21                                 |
+| 02450                            | Introduction to machine learning and data mining                       | 12 (A)                              | 5.0                                 | s21                                 |
+| 02506                            | Advanced image analysis                                                | 10 (B)                              | 5.0                                 | s21                                 |
+| 42583                            | Systems design                                                         | 10 (B)                              | 5.0                                 | s21                                 |
+| 42584                            | Project work - data science and management                             | 10 (B)                              | 10.0                                | s21                                 |
+| 42586                            | Decisions under uncertainty                                            | 12 (A)                              | 5.0                                 | s21                                 |
+| 02502                            | Image analysis                                                         | 10 (B)                              | 5.0                                 | v20                                 |
+| 10052                            | Basic Physics and Chemistry                                            | 12 (A)                              | 10.0                                | v20                                 |
+| 42005                            | Micro and Macroeconomics                                               | 12 (A)                              | 5.0                                 | v20                                 |
+| 42577                            | Introduction to Business Analytics                                     | 12 (A)                              | 5.0                                 | v20                                 |
+| 01005                            | Advanced engineering mathematics 1                                     | 10 (B)                              | 20.0                                | s20                                 |
+| 02170                            | Database systems                                                       | 7 (C)                               | 5.0                                 | s20                                 |
+| 02403                            | Introduction to mathematical statistics                                | 10 (B)                              | 5.0                                 | s20                                 |
+| 42101                            | Introduction to Operations Research                                    | 7 (C)                               | 5.0                                 | s20                                 |
+| 42415                            | Engineering Economy                                                    | 10 (B)                              | 5.0                                 | s20                                 |
+| 01017                            | Discrete Mathematics                                                   | 7 (C)                               | 5.0                                 | v19                                 |
+| 02633                            | Introduction to programming and data processing                        | 7 (C)                               | 5.0                                 | v19                                 |
+| 42580                            | Engineering work - data science and management                         | 12 (A)                              | 5.0                                 | v19                                 |
+| 42587                            | Introduction to operations and supply chain management                 | 7 (C)                               | 5.0                                 | v19                                 |
+| Total points for this education: | Total points for this education:                                       |                                     |                                     |                                     |
+| Exams                            | Exams                                                                  |                                     | 180                                 |                                     |
+| Credit transfer                  | Credit transfer                                                        |                                     | 0                                   |                                     |
+| Total                            |                                                                        |                                     | 180                                 |                                     |

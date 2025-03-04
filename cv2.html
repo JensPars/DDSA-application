@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - CV</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        .introduction, .work-history, .education, .publications, .projects, .conferences, .skills {
+            margin-bottom: 20px;
+        }
+        .introduction p {
+            margin-bottom: 10px;
+        }
+        .job, .degree, .publication {
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .skills p {
+            white-space: pre-line; /* Preserve line breaks for better readability */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="introduction">
+        <h2>CV Summary</h2>
+        <p>
+            Highly motivated MSc student at The Technical University of Denmark (DTU) with a strong foundation in machine learning and computer vision, demonstrated by a 11.7/12.0 GPA and a WACV24 publication. Seeking a PhD to advance research in computer vision, building upon experience in synthetic data generation and deep learning for computer vision.
+        </p>
+    </div>
+
+    <div class="work-history">
+        <h2>Work History</h2>
+
+        <div class="job">
+            <h3>Student Assistant</h3>
+            <p>Novo Nordisk (2022-present)</p>
+            <p>Deep Learning in Computer Vision and Synthetic Data Generation.</p>
+            <ul>
+                <li>Developed and implemented a procedural synthetic data generation pipeline</li>
+                <li>Led efforts to build a computer vision system to monitor aseptic behavior</li>
+            </ul>
+            <p><strong>Skills:</strong> Model development, ML-ops, documentation, version control, cloud computing.</p>
+        </div>
+
+        <div class="job">
+            <h3>Teaching Assistant</h3>
+            <p>TA: Computational Tools for Data Science. DTU (2022)</p>
+            <ul>
+                <li>Received a rating of 4.6/5 from course evaluations (course average: 2.4/5).</li>
+            </ul>
+
+            <p>TA: Introduction to Machine Learning and Data Mining. DTU (2021)</p>
+            <ul>
+                <li>Received a rating of 4.3/5 from course evaluations (course average: 4.0/5).</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Substitute Teacher</h3>
+            <p>Vangeboskolen - Søllerød (2018-2019)</p>
+            <p>Worked as a substitute teacher, including full-time replacement in English and French for a 7th-grade class. Developed strong communication, adaptability, and classroom management skills.</p>
+        </div>
+    </div>
+
+    <div class="education">
+        <h2>Education</h2>
+
+        <div class="degree">
+            <h3>Bachelor of Science</h3>
+            <p>DTU, Lyngby (2019 - 2023)</p>
+            <p>Strategic Analysis and System Design (GPA: 10.2/12.0). Relevant coursework: [List relevant coursework here].</p>
+        </div>
+
+        <div class="degree">
+            <h3>Master of Science</h3>
+            <p>DTU, Lyngby (2023 - 2025)</p>
+            <p>Mathematical Modelling and Computation (GPA: 11.7/12.0)</p>
+            <p>Exchange Semester at TUM</p>
+            <p>Courses: NLP, Computer Vision III, DLinVC, 3D Vision Seminar. Gained advanced knowledge in specialized computer vision topics and experienced an international academic environment.</p>
+        </div>
+    </div>
+
+    <div class="publications">
+        <h2>Publications and Presentations</h2>
+        <div class="publication">
+            <h3>CrashCar101: Procedural Generation for Damage Assessment</h3>
+            <p>IEEE/CVF Winter Conference on Applications of Computer Vision (2024)</p>
+            <p><a href="https://crashcar.compute.dtu.dk">https://crashcar.compute.dtu.dk</a></p>
+            <p>Key contributions: Developed a novel procedural generation pipeline for synthetic car damage data, enabling improved training of damage assessment models.</p>
+        </div>
+        <div class="publication">
+            <h3>Oral presentation of CrashCar101</h3>
+            <p>Danish Digitalization, Data Science and AI 1.0 (2024)</p>
+            <p>Key contributions: Presented the CrashCar101 dataset and its impact on advancing damage assessment research.</p>
+        </div>
+        <div class="publication">
+            <h3>Oral presentation of Diffusion Augmentation for Improved Object Detection</h3>
+            <p>Danish Digitalization, Data Science and AI 2.0 (2024)</p>
+            <p><a href="https://github.com/JensPars/ADLCV">https://github.com/JensPars/ADLCV</a></p>
+            <p>Key contributions: Explored and presented the benefits of diffusion-based data augmentation for enhancing object detection model performance.</p>
+        </div>
+    </div>
+
+    <div class="projects">
+        <h2>Academic Projects</h2>
+        <ul>
+            <li><strong>Clothes Segmentation and Retrieval using DNN:</strong>
+                <ul>
+                    <li>Implemented image segmentation on fashion images for feature similarity computation and information retrieval.</li>
+                    <li>Developed a deep convolutional network for attribute prediction, enabling independent item comparison.</li>
+                    <li>Built a deep convolutional network for semantic segmentation to isolate clothing items.</li>
+                    <li>Demonstrated the efficacy of using segmentation masks for improved attribute classification.</li>
+                    <li>Achieved consistent semantic segmentation using a deep neural network.</li>
+                </ul>
+            </li>
+            <li><strong>Roskilde Festival: Counting People using Computer Vision:</strong>
+                <ul>
+                    <li>Implemented Object detection model with tracking algorithm for counting people entering areas.</li>
+                    <li>Implemented acquisition setup and compute pipeline for live monitoring.</li>
+                </ul>
+            </li>
+            
+            <li><strong>Deep Learning: Car Part Segmentation:</strong>
+                <ul>
+                    <li>Addressed the challenge of automated car damage assessment using semantic segmentation in the insurance industry.</li>
+                    <li>Utilized transfer learning to enhance car damage location detection due to limited annotated data.</li>
+                    <li>Employed a pre-trained DeepLabv3 architecture with a ResNet backbone for car part and damage semantic segmentation.</li>
+                    <li>Implemented a suitable loss function to optimize model performance.</li>
+                    <li>Demonstrated significant improvement in pixel accuracy and dice score through transfer learning.</li>
+                    <li>Demonstrated significant improvement in pixel accuracy and dice score through the use of focal loss as opposed to cross entropy.</li>
+                </ul>
+            </li>
+            <li><strong>Comprehensive Synthetic Image Generation for Car Part and Damage Segmentation:</strong>
+                <ul>
+                    <li>Addressed the challenge of vehicle damage assessment, requiring both damage localization and part identification.</li>
+                    <li>Tackled the problem of limited annotated real-world data by leveraging synthetic data generation.</li>
+                    <li>Developed a procedural generation pipeline to create damaged 3D car models and render corresponding 2D images with pixel-accurate annotations.</li>
+                    <li>Generated the CrashCar101 dataset, providing a large and varied training set without manual annotation.</li>
+                    <li>Validated the approach by conducting experiments on three real-world datasets for part and damage segmentation.</li>
+                    <li>Demonstrated that models trained on a combination of real and synthetic data outperformed models trained solely on real data for part segmentation.</li>
+                    <li>Showed the effectiveness of sim2real transfer learning for damage segmentation using the CrashCar101 dataset.</li>
+                </ul>
+            </li>
+            <li><strong>Exploring Synthetic Data Generation to Damage Anything:</strong>
+                <ul>
+                    <li>Developed a comprehensive taxonomy of damage types and materials by leveraging generative language models.</li>
+                    <li>Generated hundreds of thousands of damage descriptions for diverse materials, effectively expanding the scope of damage representation.</li>
+                    <li>Utilized embedding techniques and clustering algorithms to organize the generated damage descriptions into a structured and coherent taxonomy.</li>
+                    <li>Investigated the capabilities of Large Vision Models (LVMs) in classifying and generating damage.</li>
+                    <li>Compiled a dataset of approximately 50 images showcasing various damage types to evaluate LVM performance.</li>
+                    <li>Employed VLMs to successfully classify the damage types present in the collected image dataset.</li>
+                    <li>Generated diverse and realistic damage types using generative image models.</li>
+                    <li>Concluded that LVMs demonstrate proficiency in both recognizing and generating damage, highlighting their potential for damage assessment applications.</li>
+                </ul>
+            </li>
+            <li><strong>Diffusion Augmentation for Improved Object Detection:</strong>
+                <ul>
+                    <li>Investigated the effectiveness of augmenting real image datasets with synthetically generated instances (copy-pasting) to enhance object detection model
