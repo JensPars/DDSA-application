@@ -143,34 +143,30 @@
             </p>
             
             <p>
-                Current approaches to vision tasks predominantly follow one of two paradigms:
-            </p>
-            
-            <ul>
-                <li>Training models on large datasets with annotations representing an average consensus across annotators</li>
-                <li>Fine-tuning models for specific domains but still assuming a single correct output per input</li>
-            </ul>
-            
-            <p>
-                Several areas in computer vision deal with inherently subjective judgments, including aesthetic evaluation, content moderation, image retrieval based on personal preference, and creative image editing. These applications lack a single "correct" answer and depend significantly on individual user preferences and contexts.
+                Several areas in computer vision deal with inherently subjective judgments, including aesthetic evaluation, generation and vision assistants. These applications lack a single "correct" answer and depend significantly on individual user preferences and contexts.
             </p>
             
             <p>
-                Recent work !insert related work, what has been adressed what needs to be adressed etc.!
-                A line of reasearch is interested in user-specific concepts like "<me>"", "<my-friend>", "<my-mom>" etc. [Dreambooth, Textual Inversion, Sundaram et al 2024, MyVLM, Pham 2024 et al]
-                Other work does style transfer [StyleGAN, StyleCLIP, StyleFlow] and other work does preference learning [PreferenceNet, Preference-aware Vision Models, Preference-based Image Retrieval]
+                Early work addresses personalisation of image aesthetics.
+                Ren, Jian, et al. develop personalized image aesthetics models by leveraging correlations between individual preferences and image attributes. They collect two datasets (Flickr images with MTurk annotations and personal albums rated by owners) and propose a residual-based adaptation approach that learns an offset to generic aesthetics scores.
+                Wang et al. introduce PARA, a personalized image aesthetics database with 31,220 images annotated by 438 subjects across multiple attributes.
+
+                One line of research has explored personalisation of image generation to align with individual preferences. 
+                Gal, Rinon, et al. and Ruiz, Nataniel, et al. develop methods to learn representative tokens for desired concepts, guiding image generation through supervision from reference images.
+                Sohn, Kihyuk, et al. fine-tunes text-to-image models to replicate user-provided reference images by adjusting minimal parameters (~1%) and using iterative feedback training. 
+                Pham, Chau, et al. personalize models using user comments by generating synthetic datasets with LLMs and VLMs. Their approach maps free-form comments to structured visual attributes, which are then encoded to modify Stable Diffusion's prompt embeddings, steering generation toward user-preferred images.
+                Von Rütte, Dimitri, et al. utilize sets of liked and disliked reference images, extracting keys and values from noised versions of these images. They modify the U-Net's attention mechanism by appending these extracted keys and values to the respective self-attention layers.
+                
+                Another line of research focuses on personalisation of language and vision assistants. However they all focus on personalisation to user-specific concepts such as faces, objects, or scenes, rather than subjective preferences.
 
             </p>
             
-            <p>
-                While large vision models have shown impressive performance on benchmark tasks, they still struggle with adapting to individual user needs and preferences in subjective visual tasks. This gap is particularly evident when models need to align with personalized notions of aesthetics, relevance, or appropriateness that vary significantly across users and contexts.
-            </p>
             
             <p>
                 A significant research opportunity exists in developing vision models that can systematically adapt to individual user preferences across a range of subjective tasks, while maintaining the powerful generalization capabilities of foundation models. This requires addressing challenges in efficient personalization, modeling of subjective preferences, and balanced adaptation that preserves model generality.
             </p>
         </section>
-
+        <h2>The rest is LLM generated</h2>
         <section>
             <h2>Research Questions and Methods</h2>
             
