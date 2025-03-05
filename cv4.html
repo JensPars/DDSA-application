@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV</title>
+    <style>
+        /* Base styles and variables */
+        :root {
+            --primary-color:  #840000;
+            --secondary-color:  #990000;
+            --text-color: #333;
+            --light-text: #915c54;
+            --light-bg: #f8e8e5;
+            --accent-color: #e7bbb3;
+            --border-color: #f0d1cc;
+            --success-color: #34a853;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h3 .date {
+            margin-left: auto;
+            font-weight: normal;
+            font-size: 1rem;
+            color: var(--light-text);
+        }
+        
+        /* Introduction styling */
+        .introduction {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 30px;
+        }
+        
+        .introduction p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Job and education entries */
+        .job, .degree, .publication, .project {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .job:last-child, .degree:last-child, .publication:last-child {
+            border-bottom: none;
+        }
+        
+        .company-info, .degree-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .company-name, .institution {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .duration {
+            color: var(--light-text);
+            font-weight: 400;
+        }
+        
+        /* List styling */
+        ul {
+            list-style-type: none;
+            margin-left: 10px;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Skills section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Publication styling */
+        .publication a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+        
+        .publication a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        /* Project styling */
+        .project strong {
+            color: var(--secondary-color);
+        }
+        
+        /* Rating styling */
+        .rating {
+            display: inline-block;
+            background-color: var(--success-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        /* Rating styling */
+        .bad_rating {
+            display: inline-block;
+            background-color: orange;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .ok_rating {
+            display: inline-block;
+            background-color: yellowgreen;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+        /* Two-column layout for certain sections */
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 20px;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            h3 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h3 .date {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header>
+            <h1>Curriculum Vitae</h1>
+            <p>Computer Vision & Machine Learning Student</p>
+        </header>
+
+        <section class="introduction">
+            <h2>Professional Summary</h2>
+            <p>
+                Highly motivated MSc student at The Technical University of Denmark (DTU) with a strong foundation in machine learning and computer vision, demonstrated by a 11.7/12.0 GPA and a WACV24 publication. Seeking a PhD to advance research in computer vision, building upon experience in synthetic data generation and deep learning for computer vision.
+            </p>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+            
+            <div class="job">
+                <h3>Student Assistant <span class="date">2022 - Present</span></h3>
+                <div class="company-info">
+                    <span class="company-name">Novo Nordisk</span>
+                </div>
+                <p>Deep Learning in Computer Vision and Synthetic Data Generation</p>
+                <ul>
+                    <li>Developed and implemented a procedural synthetic data generation pipeline</li>
+                    <li>Lead efforts to build a computer vision system to monitor aseptic behavior</li>
+                </ul>
+                <p><strong>Skills:</strong> Model development, ML-ops, documentation, version control, cloud computing</p>
+            </div>
+            
+            <div class="job">
+                <h3>Teaching Assistant <span class="date">2022</span></h3>
+                <div class="company-info">
+                    <span class="company-name">DTU - Computational Tools for Data Science</span>
+                </div>
+                <ul>
+                    <li>Received outstanding student evaluation rating of <span class="rating">4.6/5</span> compared to course average of <span class="bad_rating">2.4/5</span></li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <h3>Teaching Assistant <span class="date">2021</span></h3>
+                <div class="company-info">
+                    <span class="company-name">DTU - Introduction to Machine Learning and Data Mining</span>
+                </div>
+                <ul>
+                    <li>Achieved exceptional student evaluation rating of <span class="rating">4.3/5</span> compared to course average of <span class="ok_rating">4.0/5</span></li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <h3>Substitute Teacher <span class="date">2018 - 2019</span></h3>
+                <div class="company-info">
+                    <span class="company-name">Vangeboskolen - Søllerød</span>
+                </div>
+                <p>In my gap year, I worked as a substitute teacher at a public school. Amongst other responsibilities, I was a full-time replacement in English and French for a 7th-grade class. This role developed my communication, adaptability, and leadership skills while working with diverse learning abilities.</p>
+            </div>
+        </section>
+
+        <section class="two-columns">
+            <div>
+                <h2>Education</h2>
+                
+                <div class="degree">
+                    <h3>Master of Science <span class="date">2023 - 2025</span></h3>
+                    <div class="degree-info">
+                        <span class="institution">DTU, Lyngby</span>
+                        <span class="gpa">GPA: 11.7/12.0</span>
+                    </div>
+                    <p><strong>Mathematical Modelling and Computation</strong></p>
+                    <p>Core coursework: <ul>
+                        <li>Research-Oriented Project Work</li>
+                        <li>Deep Learning in Computer Vision</li>
+                        <li>Machine Learning</li>
+                        <li>High Performance Computing</li>
+
+                                        </ul>
+                    <p><strong>Exchange Semester at TUM</strong></p>
+                    <ul>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision III</li>
+                        <li>Deep Learning in Visual Computing</li>
+                        <li>3D Vision Seminar</li>
+                    </ul>
+                    <p>The TUM exchange provided exposure to cutting-edge European research in computer vision and deepened my expertise in 3D vision techniques and applications.</p>
+                </div>
+                
+                <div class="degree">
+                    <h3>Bachelor of Science <span class="date">2019 - 2023</span></h3>
+                    <div class="degree-info">
+                        <span class="institution">DTU, Lyngby</span>
+                        <span class="gpa">GPA: 10.2/12.0</span>
+                    </div>
+                    <p><strong>Strategic Analysis and System Design</strong></p>
+                    <p>Core coursework: <ul>
+                        <li>Mathematics</li>
+                        <li>Machine Learning</li>
+                        <li>Computer Vision</li>
+                        <li>Optimisation</li>
+                        <li>Management</li>
+                        <li>Economics</li>
+                    </ul>
+           </div>
+            </div>
+            
+            <div>
+                <h2>Publications</h2>
+                
+                <div class="publication">
+                    <h3>CrashCar101: Procedural Generation for Damage Assessment</h3>
+                    <p>IEEE/CVF Winter Conference on Applications of Computer Vision (2024)</p>
+                    <p><a href="https://crashcar.compute.dtu.dk" target="_blank">https://crashcar.compute.dtu.dk</a></p>
+                    <p>Key contribution: Novel procedural generation pipeline for synthetic car damage data, addressing the critical data shortage in automated vehicle damage assessment.</p>
+                </div>
+                
+                <div class="publication">
+                    <h3>Oral Presentations</h3>
+                    <ul>
+                        <li>
+                            <strong>CrashCar101</strong> - Danish Digitalization, Data Science and AI 1.0 (2024)
+                            <p>Shared methodologies for procedural synthetic data generation and its application to real-world car damage assessment.</p>
+                        </li>
+                        <li>
+                            <strong>Diffusion Augmentation for Improved Object Detection</strong> - Danish Digitalization, Data Science and AI 2.0 (2024)
+                            <p><a href="https://github.com/JensPars/ADLCV" target="_blank">https://github.com/JensPars/ADLCV</a></p>
+                            <p>Presented novel techniques for using diffusion models to enhance object detection performance through synthetic instance generation.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Academic Projects</h2>
+
+            <div class="project">
+                <h3>Clothes Segmentation and Retrieval using DNN:</h3>
+                <ul>
+                    <li>Implemented fashion item segmentation and information retrieval system.</li>
+                    <li>Built a deep convolutional network for semantic segmentation to isolate clothing items.</li>
+                    <li>Developed a deep convolutional network for attribute prediction, enabling independent item comparison.</li>
+                    <li>Achieved consistent semantic segmentation using a deep neural network.</li>
+                    <li>Demonstrated the efficacy of using segmentation masks for improved attribute classification.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Roskilde Festival: Counting People using Computer Vision</h3>
+                <ul>
+                    <li>Implemented object detection model with tracking algorithm for counting people entering areas.</li>
+                    <li>Implemented acquisition setup and compute pipeline for live monitoring.</li>
+                </ul>
+            </div>
+
+            
+            
+            <div class="project">
+                <h3>Comprehensive Synthetic Image Generation for Car Part and Damage Segmentation</h3>
+                <ul>
+                    <li>Addressed the challenge of vehicle damage assessment, requiring both damage localization and part identification</li>
+                    <li>Tackled the problem of limited annotated real-world data by leveraging synthetic data generation</li>
+                    <li>Developed a procedural generation pipeline to create damaged 3D car models and render corresponding 2D images with pixel-accurate annotations</li>
+                    <li>Generated the CrashCar101 dataset, providing a large and varied training set without manual annotation</li>
+                    <li>Validated the approach by conducting experiments on three real-world datasets for part and damage segmentation</li>
+                    <li>Demonstrated that models trained on a combination of real and synthetic data outperformed models trained solely on real data for part segmentation</li>
+                    <li>Showed the effectiveness of sim2real transfer learning for damage segmentation using the CrashCar101 dataset</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <h3>Diffusion Augmentation for Improved Object Detection</h3>
+                <ul>
+                    <li>Investigated the effectiveness of augmenting real image datasets with synthetically generated instances (copy-pasting) to enhance object detection model performance</li>
+                    <li>Evaluated various strategies for synthetic instance generation and presented preliminary results on model improvement</li>
+                    <li>Experimented with diverse methods to increase the diversity and realism of the generated synthetic instances</li>
+                    <li>Explored different techniques for generating synthetic instances along with accurate segmentation masks</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <h3>Comprehensive Review of Inverse Rendering Benchmarks</h3>
+                <ul>
+                    <li>Conducted a comprehensive review of inverse rendering benchmarks, encompassing both synthetic and real-world datasets</li>
+                    <li>Analyzed the challenges of inverse rendering, highlighting its ill-posed nature and the need for accurate ground truth data</li>
+                    <li>Examined the evolution of benchmarks from intrinsic image decomposition to full scene reconstruction, emphasizing the increasing complexity of ground truth measurements</li>
+                    <li>Compared the strengths and weaknesses of different datasets, considering factors such as capture setup, ground truth accuracy, and the range of materials and lighting conditions</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <h3>Exploring Synthetic Data Generation to Damage Anything</h3>
+                <ul>
+                    <li>Developed a comprehensive taxonomy of damage types and materials by leveraging generative language models</li>
+                    <li>Generated hundreds of thousands of damage descriptions for diverse materials, to generate an exhaustive damage vocabulary</li>
+                    <li>Utilized embedding techniques and clustering algorithms to organize the generated damage descriptions into a structured and coherent taxonomy</li>
+                    <li>Investigated the capabilities of Large Vision Models (LVMs) in classifying and generating damage</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Conferences & Academic Preparation</h2>
+            
+            <div class="job">
+                <h3>Conferences</h3>
+                <ul>
+                    <li><strong>WACV 2024:</strong> Paper published and poster presentation, networking</li>
+                    <li><strong>Danish Digitalization, Data Science and AI 1.0 (2024):</strong> Poster presentation and oral presentation at Synthetic Data Workshop, networking</li>
+                    <li><strong>Danish Digitalization, Data Science and AI 2.0 (2024):</strong> Oral presentation at Synthetic Data Workshop, networking</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <h3>Extracurricular Academic Preparation</h3>
+                <ul>
+                    <li>
+                        <strong>ProbAI 2024 PhD Summer School (Copenhagen):</strong>
+                        <ul>
+                            <li><strong>Advanced Probabilistic AI Training:</strong> 5-day program covering key topics like variational inference and deep generative models</li>
+                            <li><strong>Expert-Led, Collaborative Learning:</strong> Immersive environment with leading researchers from Aalborg University and NTNU</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>DDSA Pre-grad Retreat 2024:</strong> Intensive research-focused workshop developing collaboration skills and research methodologies with peers and established researchers
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Upcoming Publications</h2>
+            <ul>
+                <li><strong>Diffusion Augmentation for Improved Object Detection</strong></li>
+                <li><strong>Review of SOTA Inverse Rendering</strong></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-container">
+                <span class="skill">Python</span>
+                <span class="skill">PyTorch</span>
+                <span class="skill">TensorFlow</span>
+                <span class="skill">OpenCV</span>
+                <span class="skill">Computer Vision</span>
+                <span class="skill">Deep Learning</span>
+                <span class="skill">Machine Learning</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Git</span>
+                <span class="skill">AWS</span>
+                <span class="skill">Azure</span>
+                <span class="skill">MLOps</span>
+                <span class="skill">Pandas</span>
+                <span class="skill">NumPy</span>
+                <span class="skill">Matplotlib</span>
+                <span class="skill">Scikit-learn</span>
+                <span class="skill">Synthetic Data Generation</span>
+                <span class="skill">3D Modeling</span>
+                <span class="skill">Data Visualization</span>
+                <span class="skill">Research Methods</span>
+                <span class="skill">High performance computing</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

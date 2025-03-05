@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhD Project Proposal</title>
+    <style>
+        /* Base styles and variables */
+        :root {
+            --primary-color:  #840000;
+            --secondary-color:  #990000;
+            --text-color: #333;
+            --light-text: #915c54;
+            --light-bg: #f8e8e5;
+            --accent-color: #e7bbb3;
+            --border-color: #f0d1cc;
+            --success-color: #34a853;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .proposal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+        
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin: 20px 0 10px 0;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin: 15px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* List styling */
+        ul {
+            list-style-type: none;
+            margin-left: 10px;
+            margin-bottom: 15px;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .proposal-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-container">
+        <header>
+            <h1>Personalized Vision Models for Subjective Tasks</h1>
+            <p>PhD Project Proposal</p>
+        </header>
+
+        <section>
+            <h2>Background and State of the Art</h2>
+            
+            <p>
+              Computer vision has achieved remarkable success with large foundation models like CLIP [1], Stable Diffusion [2] and LLaVA [3], demonstrating impressive performance across diverse tasks. Developers typically train these models to optimise for a single "ground truth" derived from aggregate annotations, representing an average consensus across many annotators. However, this approach does not address the subjectivity in many visual tasks, where personal preferences and individual perceptions play a crucial role.
+            </p>
+            
+            <p>
+                <b>People's preferences</b> vary widely based on culture, background, gender, sex, ethnicity, age, geography, personal experiences, and individual tastes. Models trained on aggregate annotations fail to capture the nuances of individual perception, resulting in suboptimal performance for subjective tasks. As AI systems become more integrated into daily life, personalised models that can adapt to personal preferences and align with user-specific criteria are needed. AI systems that do not account for subjective preferences risk alienating users and reinforcing biases in training data, which can influence individuals' opinions and behaviours, leading to a loss of diversity in opinions and preferences. It is instrumental to develop AI systems that can respect and adapt to individual preferences to <b>(i) ensure performant models</b> and <b>(ii) promote diversity and inclusion in AI applications</b>. or <b>(ii) mitigate the societal risks associated with AI</b>.
+            </p>
+            <p>
+                Several areas in computer vision deal with inherently subjective judgments, including aesthetic evaluation, image and video generation and vision assistants. These applications lack a "correct" answer and depend significantly on individual user preferences and contexts.
+            </p>
+            
+            <p>
+                <b>Image aesthetics</b>. Early work addresses the personalisation of image aesthetics. Ren, Jian, and Wang et al. gathered datasets with images annotated by subjects across various attributes capturing aesthetics. These methods fail to systematically capture a representative set of preferences across multiple sub-groups.
+            </p>
+            <p>
+                <b>Personalised generation</b> explores generating images containing user-specific concepts and images that align with individual preferences. Gal, Rinon, et al., Ruiz, Nataniel, et al.,  Sohn, Kihyuk, et al., Apply methods to fine-tune models using a few examples. These methods are very compute intensive because users must train the models. 
+                Von Rütte, Dimitri, et al. utilise liked and disliked reference images. This limited binary data does not capture a general representation of the users' preferences.
+                Pham, Chau, et al. train a general model to map users' free-form comments on generated images to structured visual attributes. Because they lack actual human-annotated data, they synthesise it using VLMs, which leads to the method not being representative of actual human preferences.
+                All of the aformentioned methods fail to generalise to concepts not contained in the few training examples and would not capture correlations like "likes Harley Davidson motorcycles" -> "likes leather jackets".
+            </p>
+            <p>    
+                <b>Personalised vision language models.</b> [4, 5, 6, 7, 8, 9, 10] explore introducing user-specific concepts to vision language models, like my dog, my mum, my friend etc.
+                Wei, Tianxin, et al. use VLMs for generative recommendation systems, capturing human preference given some user's interaction history.
+                Only one paper addresses the preference personalisation of VLMs, suggesting that more work is needed. Meanwhile LLMs have been personalised 
+                <A significant research opportunity exists in developing vision models that can systematically adapt to individual user preferences across a range of subjective tasks, while maintaining the powerful generalization capabilities of foundation models. This requires addressing challenges in efficient personalization, modeling of subjective preferences, and balanced adaptation that preserves model generality.>
+            </p>
+        </section>
+
+        <section>
+            <h2>Research Questions and Methods</h2>
+
+            
+            
+            <h4>RQ: How can we efficiently personalize large vision models to individual user preferences?</h4>
+            <ul>
+            <li>RQ1: How can we learn general preference representations for vision tasks?</li>
+            <li>RQ2: What types of examples from the user is needed to effectively learn their preference?</li>
+            <li>RQ3: How can we personalise image generation and vision language models?</li>
+            <li>RQ4: How can we evaluate the personalisation quality of vision models?</li>
+            </ul>
+            
+            
+        
+
+            <h4>Methodology</h4>
+            
+            
+            <ul>
+                <li>
+                    <strong>Learned preference feature representations</strong> from internet-scale image collections and meta-data [cite datasets]</strong>
+                    <ul>
+                        <li><strong>Determine suitable algorithm</strong> to extract preference features from internet scale data</li>
+                        <ul>
+                            <li>Modeling temporal effects of how preferences change over time</li>
+                            <li>Preference clustering to identify common preference patterns</li>
+                            <li>Uncertainty modeling specifically for subjective dimensions, differentiating between inherent subjectivity and model uncertainty</li>
+                        </ul>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <strong>Types of examples needed</strong> to effectively learn user preferences
+                    <ul>
+                        <li>Experiment with binary image rating, pairwise comparison and text feedback</li>
+                        <li>Conduct small scale user tests</li>
+                        <li>Conduct large scale user test with VLM agents</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Personalisation of image generation models</strong>
+                    <ul>
+                        <li>Adaptation of generation models with preference embeddings/features</li>
+                        <li>Adaptation of generation models using different types of examples</li>
+                        <li>Efficient fine-tuning techniques for personalisation, LoRA, Adapters, Prompt-tuning</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Personalisation of image generation models</strong>
+                    <ul>
+                        <li>Adaptation of generation models with preference embeddings/features</li>
+                        <li>Adaptation of generation models using different types of examples</li>
+                        <li>Efficient fine-tuning techniques for personalisation, LoRA, Adapters, Prompt-tuning</li>
+                    </ul>
+
+                </li>
+
+                <li>
+                    <strong>User Studies:</strong> Conduct mixed-methods user research to validate personalisation effectiveness in real-world scenarios
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Outcome and Potential Impact</h2>
+            
+            <p>This research will deliver several key contributions:</p>
+
+            <h3>Technical Contributions</h3>
+            <ul>
+                <li>Novel architectures for personalizing large vision models with minimal examples</li>
+                <li>Representation methods for modeling subjective visual preferences</li>
+                <li>Efficient adaptation techniques balancing personalization and generalization</li>
+                <li>Benchmark datasets for evaluating preference-based vision models</li>
+                <li>Empirical insights into the structure and dimensionality of visual preference spaces</li>
+            </ul>
+
+            <h3>Practical Applications</h3>
+            <ul>
+                <li>Personalized image retrieval and organization systems</li>
+                <li>Adaptive content moderation tools respecting individual sensitivities</li>
+                <li>Customized creative assistants for visual content creation</li>
+                <li>Accessibility tools adapting to individual perceptual preferences</li>
+                <li>Improved human-AI collaborative systems for visual tasks</li>
+            </ul>
+
+            <h3>Broader Impact</h3>
+            <p>
+                This research challenges the dominant paradigm of optimizing for a single ground truth in AI systems. By developing methods that respect and adapt to subjective preferences, it will help create more inclusive AI systems that accommodate diverse user perspectives rather than imposing majority-defined standards.
+            </p>
+            
+            <p>
+                The results will have applications across domains including creative tools, content recommendation, search systems, and accessibility technologies. This work also addresses the growing need for AI personalization while maintaining privacy, as the proposed methods focus on efficient adaptation without necessarily requiring large personal data collection.
+            </p>
+            
+            <p>
+                By bridging the gap between powerful foundation models and individual preferences, this research will help develop AI systems that better serve diverse human needs while respecting subjective differences in visual perception and preferences. This could fundamentally change how we think about evaluation and optimization in computer vision, moving beyond single-ground-truth metrics to more nuanced, personalized measures of success.
+            </p>
+        </section>
+    </div>
+
+
+    
+</body>
+</html>
