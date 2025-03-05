@@ -131,7 +131,7 @@
 <body>
     <div class="proposal-container">
         <header>
-            <h1>Personalized Vision Models for Subjective Tasks</h1>
+            <h1>Personalised Vision Models for Subjective Tasks</h1>
             <p>PhD Project Proposal</p>
         </header>
 
@@ -150,16 +150,16 @@
             </p>
             
             <p>
-                <b>Image aesthetics</b>. Early work addresses the personalisation of image aesthetics. Ren, Jian, and Wang et al. gathered datasets with images annotated by subjects across various attributes capturing aesthetics. These methods fail to systematically capture a representative set of preferences across multiple sub-groups.
+                <b>Image aesthetics</b>. Early work addresses the personalisation of image aesthetics. [4,5] gathered datasets with images annotated by subjects across various attributes capturing aesthetics. These methods fail to systematically capture a representative set of preferences across multiple sub-groups.
             </p>
             <p>
-                <b>Personalised generation</b> explores generating images containing user-specific concepts and images that align with individual preferences. Gal, Rinon, et al., Ruiz, Nataniel, et al.,  Sohn, Kihyuk, et al., Apply methods to fine-tune models using a few examples. These methods are very compute intensive because users must train the models. 
-                Von Rütte, Dimitri, et al. utilise liked and disliked reference images. This limited binary data does not capture a general representation of the users' preferences.
-                Pham, Chau, et al. train a general model to map users' free-form comments on generated images to structured visual attributes. Because they lack actual human-annotated data, they synthesise it using VLMs, which leads to the method not being representative of actual human preferences.
-                All of the aformentioned methods fail to generalise to concepts not contained in the few training examples and would not capture correlations like "likes Harley Davidson motorcycles" -> "likes leather jackets".
+                <b>Personalised generation</b> explores generating images containing user-specific concepts and images that align with individual preferences. [6-8] Apply methods to fine-tune models using a few examples. These methods are very compute intensive because users must train the models. 
+                [9] utilise liked and disliked reference images. This limited binary data does not capture a general representation of the users' preferences.
+                [10] train a general model to map users' free-form comments on generated images to structured visual attributes. Because they lack actual human-annotated data, they synthesise it using VLMs, which leads to the method not being representative of actual human preferences.
+                All of the aformentioned methods fail to generalise to concepts not contained in the few training examples and would not capture associations like "likes Harley Davidson motorcycles" -> "likes leather jackets".
             </p>
             <p>    
-                <b>Personalised vision language models.</b> [4, 5, 6, 7, 8, 9, 10] explore introducing user-specific concepts to vision language models, like my dog, my mum, my friend etc.
+                <b>Personalised vision language models.</b> [11-17] explore introducing user-specific concepts to vision language models, like my dog, my mum, my friend etc.
                 Wei, Tianxin, et al. use VLMs for generative recommendation systems, capturing human preference given some user's interaction history.
                 Only one paper addresses the preference personalisation of VLMs, suggesting that more work is needed. Meanwhile LLMs have been personalised 
                 <A significant research opportunity exists in developing vision models that can systematically adapt to individual user preferences across a range of subjective tasks, while maintaining the powerful generalization capabilities of foundation models. This requires addressing challenges in efficient personalization, modeling of subjective preferences, and balanced adaptation that preserves model generality.>
@@ -168,105 +168,61 @@
 
         <section>
             <h2>Research Questions and Methods</h2>
-
-            
-            
-            <h4>RQ: How can we efficiently personalize large vision models to individual user preferences?</h4>
-            <ul>
-            <li>RQ1: How can we learn general preference representations for vision tasks?</li>
-            <li>RQ2: What types of examples from the user is needed to effectively learn their preference?</li>
-            <li>RQ3: How can we personalise image generation and vision language models?</li>
-            <li>RQ4: How can we evaluate the personalisation quality of vision models?</li>
-            </ul>
-            
-            
-        
+            <p>
+            The proposed research aims to develop methods for personalizing large vision models to individual user preferences with minimal user input. Having a general representation of preferences is crucial for personalisation, to this end we propose to build a foundational preference model which can effectively capture user preferences across a range of subjective tasks given very few examples. This leads us to the first research question 
+            </p>
+            <p>
+            <b>RQ1</b>: How can we train a foundational visual preference model?
+            </p>
+            <p>
+            Vision language assistants like LLaVA can be used in everyday life to help users with a range of tasks. Take for example Figure 1, where a used can provide a vision language model with an image of their living room, and ask the model to suggest a new piece of furniture that would fit well in the room, here the preference of the user is crucial. This leads us to the second research question
+            </p>
+            <p>
+            <b>RQ2</b>: How can we make personalisable vision langauge Model?
+            </p>
+            <p>
+            Image generation models can be used to create personalised content for users. For example, a user could provide a few examples of images they like, and the model could generate new images that align with the user's preferences. This leads us to the third research question
+            </p>
+            <b>RQ3</b>: How can we make personalisable image generation Model? 
 
             <h4>Methodology</h4>
-            
-            
-            <ul>
-                <li>
-                    <strong>Learned preference feature representations</strong> from internet-scale image collections and meta-data [cite datasets]</strong>
-                    <ul>
-                        <li><strong>Determine suitable algorithm</strong> to extract preference features from internet scale data</li>
-                        <ul>
-                            <li>Modeling temporal effects of how preferences change over time</li>
-                            <li>Preference clustering to identify common preference patterns</li>
-                            <li>Uncertainty modeling specifically for subjective dimensions, differentiating between inherent subjectivity and model uncertainty</li>
-                        </ul>
-                        
-                    </ul>
-                </li>
-                <li>
-                    <strong>Types of examples needed</strong> to effectively learn user preferences
-                    <ul>
-                        <li>Experiment with binary image rating, pairwise comparison and text feedback</li>
-                        <li>Conduct small scale user tests</li>
-                        <li>Conduct large scale user test with VLM agents</li>
-                        </ul>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Personalisation of image generation models</strong>
-                    <ul>
-                        <li>Adaptation of generation models with preference embeddings/features</li>
-                        <li>Adaptation of generation models using different types of examples</li>
-                        <li>Efficient fine-tuning techniques for personalisation, LoRA, Adapters, Prompt-tuning</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Personalisation of image generation models</strong>
-                    <ul>
-                        <li>Adaptation of generation models with preference embeddings/features</li>
-                        <li>Adaptation of generation models using different types of examples</li>
-                        <li>Efficient fine-tuning techniques for personalisation, LoRA, Adapters, Prompt-tuning</li>
-                    </ul>
-
-                </li>
-
-                <li>
-                    <strong>User Studies:</strong> Conduct mixed-methods user research to validate personalisation effectiveness in real-world scenarios
-                </li>
-            </ul>
+            <p>
+                To address <b>RQ1</b>, we propose developing a foundational preference model trained on web-scale images and associated metadata [18]. Traditional approaches requiring human-annotated preference data are prohibitively expensive and time-consuming at scale. Instead, we leverage social media content where influencers and users naturally curate images reflecting their preferences.
+                Our approach capitalises on the implicit preference signals in user posting behaviour; images shared by the same user or within communities likely represent coherent preference patterns. Using self-supervised learning methods building on recent advances in visual representation learning e.g. [1,24-26], we aim to construct an embedding space where collections of images are matched if they exhibit similar characteristics that correlate with user preferences.
+                This embedding space enables mapping collections of images to preference vectors, creating a foundation for personalised visual recommendation systems without requiring explicit preference annotations.
+            </p>
+            <p>
+                To address <b>RQ2</b>, we propose extending the foundational preference model to a vision language model that can answer user-specific queries about visual content. We seek to adapt multimodal language models e.g. [3, 27] with user-specific preference embeddings, enabling the model to generate responses that align with individual user preferences. LoRA, QLoRA, adapters etc. [28-30]. Addtionally we will explore techniques for continual learning to adapt the model to new user preferences over time.
+            </p>
+            <p>
+                To address <b>RQ3</b>, we propose developing a personalisable image generation model to create new images based on user preferences. We aim to leverage recent advances in generative models e.g. [2, 31] to generate images that align with user-specific preference vectors. We will explore techniques for conditioning generative models on preference embeddings, enabling users to guide the image-generation process with minimal examples. Additionally, building on recent work in personalisation of generative models [10], we aim to generate a synthetic dataset of prefered user profile image pairs to train the model.
+            </p>
         </section>
 
         <section>
             <h2>Outcome and Potential Impact</h2>
-            
-            <p>This research will deliver several key contributions:</p>
-
-            <h3>Technical Contributions</h3>
-            <ul>
-                <li>Novel architectures for personalizing large vision models with minimal examples</li>
-                <li>Representation methods for modeling subjective visual preferences</li>
-                <li>Efficient adaptation techniques balancing personalization and generalization</li>
-                <li>Benchmark datasets for evaluating preference-based vision models</li>
-                <li>Empirical insights into the structure and dimensionality of visual preference spaces</li>
-            </ul>
-
-            <h3>Practical Applications</h3>
-            <ul>
-                <li>Personalized image retrieval and organization systems</li>
-                <li>Adaptive content moderation tools respecting individual sensitivities</li>
-                <li>Customized creative assistants for visual content creation</li>
-                <li>Accessibility tools adapting to individual perceptual preferences</li>
-                <li>Improved human-AI collaborative systems for visual tasks</li>
-            </ul>
-
+            <p>
+                This research will be published in top-tier venues like CVPR, ICCV, NeurIPS, and ICML, with open-source code, models, and datasets available for the community. We will share findings through workshops and talks at key conferences, collaborating with academic and industry partners for broader impact.
+            </p>
+                
+            <h3>Methodological Contributions</h3>
+            <p>
+                We will introduce a Preference Foundation Model to learn user preference embeddings from web-scale image data without explicit annotations, allowing for few-shot adaptation. Additionally, we'll develop a parameter-efficient adaptation method for large vision-language models and create personalisable image generation models.
+            </p>
+                
             <h3>Broader Impact</h3>
             <p>
-                This research challenges the dominant paradigm of optimizing for a single ground truth in AI systems. By developing methods that respect and adapt to subjective preferences, it will help create more inclusive AI systems that accommodate diverse user perspectives rather than imposing majority-defined standards.
+                This research aims to improve AI systems' adaptation to human preferences, enhancing inclusivity and accessibility. Applications include personalised educational materials, patient-centric communication in healthcare, and tools for creative industries and e-commerce, ultimately improving user satisfaction.
             </p>
-            
+                
             <p>
-                The results will have applications across domains including creative tools, content recommendation, search systems, and accessibility technologies. This work also addresses the growing need for AI personalization while maintaining privacy, as the proposed methods focus on efficient adaptation without necessarily requiring large personal data collection.
+                By addressing subjective preferences, we strive for AI that supports human diversity and autonomy, leading to more inclusive and human-centred systems across various domains.
             </p>
-            
-            <p>
-                By bridging the gap between powerful foundation models and individual preferences, this research will help develop AI systems that better serve diverse human needs while respecting subjective differences in visual perception and preferences. This could fundamentally change how we think about evaluation and optimization in computer vision, moving beyond single-ground-truth metrics to more nuanced, personalized measures of success.
-            </p>
+           
         </section>
+
+
+
     </div>
 
 
